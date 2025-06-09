@@ -27,6 +27,7 @@ func Up() {
 	}
 	fmt.Println("Successfully completed database up migration")
 }
+
 func Down() {
 	m, err := migrate.New(
 		"file://migrations",
@@ -42,5 +43,4 @@ func Down() {
 		log.Errorf("error during down migration:%v", err)
 	}
 	fmt.Println("Successfully completed database down migration")
-
 }
