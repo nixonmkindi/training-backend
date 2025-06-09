@@ -1,6 +1,7 @@
 package routes
 
 import (
+	"training-backend/package/auth"
 	"training-backend/package/validator"
 	"training-backend/server/middlewares"
 
@@ -18,7 +19,7 @@ func Routers(app *echo.Echo) {
 	//app.Use(middlewares.CSRF())
 	// app.Use(middlewares.JWT(), middlewares.CheckAuth())
 	// app.Use(middlewares.Session())
-	// app.Use(auth.KeyAuth())
+	app.Use(auth.KeyAuth())
 	app.Validator = validator.GetValidator() //initialize custom validator
 	//web routers
 
